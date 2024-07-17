@@ -15,15 +15,16 @@
 # export var=("chlos" "dfeos" "dissicos" "no3os" "intpp" "fgco2" "epc100" "spco2")
 # export var=("chl" "dfe" "dissic" "no3" "o2" "ph" "pp") ### ocean_cobalt_omip_tracers_month_z                  
 # export var=("limpdiat" "limpdiaz" "limppico" "limpmisc" "limndiat" "limndiaz" "limnpico" "limnmisc" "limfediat" "limfediaz" "limfepico" "limfemisc" "intbfe" "intppdiat" "intppdiaz" "intppmisc" "intpppico")
-export var=("talk")
-export yr_strt=2015                  # Start year of regrdding
-export yr_end=2100                  # End year of regridding
+#export var=("thetao" "so")
+export var=("dfe")
+export yr_strt=1990                  # Start year of regrdding
+export yr_end=2014                  # End year of regridding
 
 export date="0101"	             # Month & Day of simulation results
-export exp="esm-ssp585_D1_dfe_fert_GLOBAL"
+export exp="historical_D1_c5_control_B01"
 
 export model="ESM4"    # The name of simulation
-export input_path="/work/Kyungmin.Noh/DATA/GFDL_ESM4/1.IRON_FERTILIZATION/SSP585/FERT/GLOBAL/"
+export input_path="/work/Kyungmin.Noh/DATA/GFDL_ESM4/1.IRON_FERTILIZATION/CONTROL/"
 export output_path=$input_path
 
 

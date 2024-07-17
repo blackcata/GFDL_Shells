@@ -13,17 +13,18 @@
 # 	1. Just change the upper setting part only and don't change below codes
 
 #export var=("ocean_cobalt_btm.nc" "ocean_cobalt_fdet_100.nc" "ocean_cobalt_tracers_int.nc" "ocean_cobalt_omip_2d.nc" "ocean_cobalt_omip_sfc.nc" "ocean_cobalt_omip_tracers_month_z.nc" "ocean_cobalt_sfc.nc" "ocean_cobalt_fluxes_int.nc" "ocean_cobalt_omip_rates_year_z" "ocean_month.nc")                   # Variable names 
-# export var=("ocean_cobalt_omip_2d.nc" "ocean_cobaljt_omip_sfc.nc" "ocean_cobalt_omip_tracers_month_z.nc" "ocean_cobalt_sfc.nc" "ocean_cobalt_fluxes_int.nc" "ocean_cobalt_omip_rates_year_z" "ocean_month.nc")                   # Variable names 
+# export var=("ocean_cobalt_omip_2d.nc" "ocean_cobalt_omip_sfc.nc" "ocean_cobalt_omip_tracers_month_z.nc" "ocean_cobalt_sfc.nc" "ocean_cobalt_fluxes_int.nc" "ocean_cobalt_omip_rates_year_z.nc" "ocean_month.nc")                   # Variable names 
 # export var=("ocean_cobalt_omip_tracers_month_z.nc" "ocean_cobalt_sfc.nc" "ocean_cobalt_fluxes_int.nc" "ocean_cobalt_omip_rates_year_z" "ocean_month.nc")                   # Variable names 
 # export var=("ocean_cobalt_omip_tracers_month_z.nc")
 #export var=("ocean_cobalt_sfc.nc")                   # Variable names 
 
-export var=("ocean_cobalt_omip_rates_year_z")
+#export var=("ocean_month_z.nc" "ocean_annual_z.nc" "ocean_annual_rho2.nc" "ice_month.nc")
+export var=("ocean_month_z.nc" "ocean_annual_z.nc" "ocean_annual_rho2.nc" "ice_month.nc")
 export yr_strt=2015                  # Start year of regrdding
-export yr_end=2016                  # End year of regridding
+export yr_end=2100                  # End year of regridding
 
 export date="0101"	             # Month & Day of simulation results
-export exp="esm-ssp585_D1_Control"    # The name of simulation
+export exp="esm-ssp585_D1_dfe_fert_LS_NP"    # The name of simulation
 
 export model="ESM4"    # The name of simulation
 export dir="/archive/Kyungmin.Noh/CMIP6/ESM4/C4MIP/"

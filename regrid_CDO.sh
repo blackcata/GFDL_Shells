@@ -10,8 +10,8 @@
 export N_lat=720 	   # The number of latitude direction mesh
 export N_lon=360 	   # The numer of longitude direction mesh 
 
-#export regrid="remapbil"   # Regridding method - bilinear
-export regrid="remapnn"   # Regridding method - bilinear
+export regrid="remapbil"   # Regridding method - bilinear
+#export regrid="remapnn"   # Regridding method - bilinear
 
 #echo "Remapping variable : "$var
 
@@ -19,13 +19,13 @@ echo "Remapping lat/lon : "$N_lat"x"$N_lon
 echo "Remapping Method : "$regrid
 echo " "
 
-export path_input="/work/Kyungmin.Noh/DATA/GFDL_ESM4/1.IRON_FERTILIZATION/LIMITATIONS/"
-export path_output="/work/Kyungmin.Noh/DATA/GFDL_ESM4/1.IRON_FERTILIZATION/LIMITATIONS/"
+export path_input="/home/Kyungmin.Noh/Python/1.IRON_FERTILIZATION/DATA/"
+export path_output="/home/Kyungmin.Noh/Python/1.IRON_FERTILIZATION/DATA/"
 export list=$(ls ${path_input})
 
 # Start regrid process 
-for input in $list; do
-#export input="Fe_Limitation_CTRL.nc"
+#for input in $list; do
+    export input="PFTs_Limitation_CTRL.nc"
 	# Set input & output files for regridding
 	export file_input=$path_input"/"$input
 	export file_output=$path_output"/regrid_"$N_lat"x"$N_lon"_"$input
@@ -44,4 +44,4 @@ for input in $list; do
 	echo "REMAPPING COMPLETED "
 	echo "!-----------------------------------------------------------------------!"
 	echo ""
-done
+#done

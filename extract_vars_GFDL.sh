@@ -25,11 +25,15 @@
 #export file_type="ocean_month.nc"    # The simulation result including variables
 #export var=("tos" "sos" "mlotst")
 #
+#export file_type="ocean_month_z.nc"    # The simulation result including variables
+#export var=("thetao" "so")
+#
 #export file_type="ocean_cobalt_omip_sfc.nc"    # The simulation result including variables
 #export var=("chlos" "dissicos" "dfeos" "phos" "no3os" "po4os" "sios" "talkos")                   # Variable names 
 ##
-#export file_type="ocean_cobalt_omip_2d.nc"    # The simulation result including variables
+export file_type="ocean_cobalt_omip_2d.nc"    # The simulation result including variables
 #export var=("epfe100" "intpn2" "fsfe" "frfe" "epc100" "fgco2" "spco2" "intpp" "limpdiat" "limpdiaz" "limppico" "limpmisc" "limndiat" "limndiaz" "limnpico" "limnmisc" "limfediat" "limfediaz" "limfepico" "limfemisc" "intbfe" "intppdiat" "intppdiaz" "intppmisc" "intpppico")                   # Variable names 
+export var=("intppdiat" "intppdiaz" "intppmisc" "intpppico")
 #
 #export file_type="ocean_cobalt_sfc.nc"    # The simulation result including variables
 #export var=("sfc_def_fe_di" "sfc_def_fe_lgp" "sfc_def_fe_smp" "sfc_felim_di" "sfc_felim_lgp" "sfc_felim_smp" "sfc_irrlim_di" "sfc_irrlim_lgp" "sfc_irrlim_smp" "sfc_no3lim_lgp" "sfc_no3lim_smp" "sfc_po4lim_di" "sfc_po4lim_lgp" "sfc_po4lim_smp")
@@ -37,10 +41,13 @@
 #export file_type="ocean_cobalt_fluxes_int.nc"
 #export var=("wc_vert_int_jno3denit" "wc_vert_int_jnitrif" "wc_vert_int_nfix" "wc_vert_int_juptake_nh4" "wc_vert_int_jptake_no3" "jfe_fert_100" "jfe_ads_100")
 ##
+##
+#export file_type="ocean_cobalt_tracers_int.nc"
+#export var=("wc_vert_int_fe")
 
-export file_type="ocean_cobalt_omip_tracers_month_z.nc"    # The simulation result including variables
+#export file_type="ocean_cobalt_omip_tracers_month_z.nc"    # The simulation result including variables
 #export var=("chl" "dfe" "dissic" "no3" "o2" "ph") ### ocean_cobalt_omip_tracers_month_z                  
-export var=("talk")
+#export var=("talk")
 
 # export file_type="ocean_cobalt_omip_rates_year_z.nc"    # The simulation result including variables
 # export var=("pp" "pnitrate" "expc" "remoc")
@@ -53,17 +60,17 @@ export var=("talk")
 
 
 export yr_strt=1990                 # Start year of regrdding
-export yr_end=2014                  # End year of regridding
+export yr_end=1992                  # End year of regridding
 
 export date="0101"	             # Month & Day of simulation results
-#export exp="esm-ssp585_D1_Control"
-export exp="historical_D1_c5_dfe_fert_GLOBAL"
+#export exp="esm-ssp585_D1_dfe_fert_GLOBAL_1x"
+export exp="historical_D1_c5_control_B01"
 
 export model="ESM4"    # The name of simulation
-export dir="/archive/Kyungmin.Noh/CMIP6/ESM4/DECK_IF/"
+export dir="/archive/Kyungmin.Noh/CMIP6/ESM4/DECK/"
 
 export input_path=$dir$model"_"$exp"/gfdl.ncrc5-intel22-prod-openmp/history/extracted_files/"
-export output_path="/work/Kyungmin.Noh/DATA/GFDL_ESM4/1.IRON_FERTILIZATION/LARGE_SCALE/GLOBAL/"
+export output_path="/work/Kyungmin.Noh/DATA/GFDL_ESM4/1.IRON_FERTILIZATION/SENSITIVITY_TEST/CTRL/"
 
 echo "Input PATH    : " $input_path
 echo "Output PATH   : " $output_path

@@ -14,7 +14,8 @@ export regrid="remapbil"   # Regridding method - bilinear
 export var=""           # The name of variable to regrid
 
 #export var=("epc100" "fgco2" "spco2" "intpp" "chlos" "dissicos" "no3os" "dfeos")
-export var=("intpp")
+#export var=("intpp")
+export var=("lim_fe" "lim_n")
 echo "Remapping variable : "$var
 echo "Remapping lat/lon : "$N_lat"x"$N_lon
 echo "Remapping Method : "$regrid
@@ -22,9 +23,9 @@ echo " "
 export path_static="/home/Kyungmin.Noh/Python/3.NITRIFICATION/DATA/MASKS/"
 export file_static="ocean_static.nc"
 
-export path_input="/work/Kyungmin.Noh/DATA/GFDL_ESM4/1.IRON_FERTILIZATION/SSP585/CTRL/"
-export path_output=/"work/Kyungmin.Noh/DATA/GFDL_ESM4/1.IRON_FERTILIZATION/SSP585/CTRL/regrid/"
-export exp="ESM4_esm-ssp585_D1_Control"
+export path_input="/home/Kyungmin.Noh/Python/1.IRON_FERTILIZATION/DATA/"
+export path_output="/home/Kyungmin.Noh/Python/1.IRON_FERTILIZATION/DATA/"
+export exp="ESM4_historical_D1_c5_control_B01"
 export list=$(ls ${path_input})
 export num_var=${#var[@]}
 
@@ -36,7 +37,8 @@ fi
 let "num_var -= 1"
 for ivar in $(seq 0 $num_var); do
     export var_name=${var[$ivar]}
-    export input="ann."$var_name".2015-2100yr."$exp".nc"
+    #export input=$var_name".1990-2014yr."$exp".nc"
+    export input="PFTs_Limitation_CTRL.nc"
 
 	# Set input & output files for regridding
 	export file_input=$path_input$input
