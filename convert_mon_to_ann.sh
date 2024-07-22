@@ -16,15 +16,18 @@
 # export var=("chl" "dfe" "dissic" "no3" "o2" "ph" "pp") ### ocean_cobalt_omip_tracers_month_z                  
 # export var=("limpdiat" "limpdiaz" "limppico" "limpmisc" "limndiat" "limndiaz" "limnpico" "limnmisc" "limfediat" "limfediaz" "limfepico" "limfemisc" "intbfe" "intppdiat" "intppdiaz" "intppmisc" "intpppico")
 #export var=("thetao" "so")
-export var=("dfe")
-export yr_strt=1990                  # Start year of regrdding
-export yr_end=2014                  # End year of regridding
+export var=("fgco2")
+export yr_strt=2015                  # Start year of regrdding
+export yr_end=2100                  # End year of regridding
 
 export date="0101"	             # Month & Day of simulation results
-export exp="historical_D1_c5_control_B01"
+#export exp="historical_D1_c5_dfe_fert_LS_SO_S"
+export exp="esm-ssp585_D1_dfe_fert_GLOBAL_1x_STOP"
 
 export model="ESM4"    # The name of simulation
-export input_path="/work/Kyungmin.Noh/DATA/GFDL_ESM4/1.IRON_FERTILIZATION/CONTROL/"
+#export input_path="/work/Kyungmin.Noh/DATA/GFDL_ESM4/1.IRON_FERTILIZATION/LARGE_SCALE/SO_S/"
+export input_path="/work/Kyungmin.Noh/DATA/GFDL_ESM4/1.IRON_FERTILIZATION/SSP585/STOP/GLOBAL/STOP_30Y/"
+
 export output_path=$input_path
 
 
@@ -71,7 +74,8 @@ for ivar in $(seq 0 $num_var); do
         continue
     fi
 
-    ncra --mro -O -d time,1,,12 $input_path$input_file_name $output_path$output_file_name
+#    ncra --mro -O -d time,,,12,12 $input_path$input_file_name $output_path$output_file_name
+    cdo -yearmean $input_path$input_file_name $output_path$output_file_name
     echo ""
 
 done
