@@ -12,24 +12,24 @@
 # Set specific varibles, years, file type
 # 	1. Just change the upper setting part only and don't change below codes
 
-#export var=("ocean_cobalt_btm.nc" "ocean_cobalt_fdet_100.nc" "ocean_cobalt_tracers_int.nc" "ocean_cobalt_omip_2d.nc" "ocean_cobalt_omip_sfc.nc" "ocean_cobalt_omip_tracers_month_z.nc" "ocean_cobalt_sfc.nc" "ocean_cobalt_fluxes_int.nc" "ocean_cobalt_omip_rates_year_z" "ocean_month.nc")                   # Variable names 
-# export var=("ocean_cobalt_omip_2d.nc" "ocean_cobalt_omip_sfc.nc" "ocean_cobalt_omip_tracers_month_z.nc" "ocean_cobalt_sfc.nc" "ocean_cobalt_fluxes_int.nc" "ocean_cobalt_omip_rates_year_z.nc" "ocean_month.nc")                   # Variable names 
-# export var=("ocean_cobalt_omip_tracers_month_z.nc" "ocean_cobalt_sfc.nc" "ocean_cobalt_fluxes_int.nc" "ocean_cobalt_omip_rates_year_z" "ocean_month.nc")                   # Variable names 
-# export var=("ocean_cobalt_omip_tracers_month_z.nc")
-#export var=("ocean_cobalt_sfc.nc")                   # Variable names 
+export var=("ocean_cobalt_omip_2d.nc" "ocean_cobalt_omip_sfc.nc" "ocean_cobalt_btm.nc" "ocean_cobalt_fluxes_int.nc" "ocean_cobalt_omip_tracers_month_z.nc" "ocean_cobalt_omip_rates_year_z.nc" "ocean_month.nc" "ocean_cobalt_sfc.nc" "ocean_cobalt_fdet_100.nc" "ocean_cobalt_tracers_int.nc" "ocean_month_z.nc" "ocean_cobalt_tracers_year_z.nc" "ocean_annual_z.nc" "ice_month.nc" ".atmos_co2_month." ".land_month." ".land_month_cmip.")
 
+#export var=("ocean_cobalt_omip_2d.nc" "ocean_cobalt_omip_sfc.nc" "ocean_cobalt_btm.nc" "ocean_cobalt_fluxes_int.nc" "ocean_month.nc" "ocean_cobalt_omip_tracers_month_z.nc" "ocean_cobalt_omip_rates_year_z.nc")
 #export var=("ocean_month_z.nc" "ocean_annual_z.nc" "ocean_annual_rho2.nc" "ice_month.nc")
-export var=("ocean_month_z.nc" "ocean_annual_z.nc" "ocean_annual_rho2.nc" "ice_month.nc")
-export yr_strt=2015                  # Start year of regrdding
-export yr_end=2100                  # End year of regridding
+
+export yr_strt=1990                  # Start year of regrdding
+export yr_end=2014                  # End year of regridding
 
 export date="0101"	             # Month & Day of simulation results
-export exp="esm-ssp585_D1_dfe_fert_LS_NP"    # The name of simulation
+export exp="esm-hist_D1"    # The name of simulation
+#export exp="historical_D1_c5_dfe_fert_GLOBAL_0.001x"    # The name of simulation
 
 export model="ESM4"    # The name of simulation
-export dir="/archive/Kyungmin.Noh/CMIP6/ESM4/C4MIP/"
-export input_path=$dir$model"_"$exp"/gfdl.ncrc5-intel22-prod-openmp/history/"
-export output_path=$dir$model"_"$exp"/gfdl.ncrc5-intel22-prod-openmp/history/extracted_files/"
+export dir_out="/archive/Kyungmin.Noh/CMIP6/ESM4/C4MIP_IF/"
+export dir_in="/archive/Kyungmin.Noh/CMIP6/ESM4/C4MIP_IF/"
+
+export input_path=$dir_in$model"_"$exp"/gfdl.ncrc5-intel22-prod-openmp/history/"
+export output_path=$dir_out$model"_"$exp"/gfdl.ncrc5-intel22-prod-openmp/history/extracted_files/"
 
 
 echo "#################################################################"
